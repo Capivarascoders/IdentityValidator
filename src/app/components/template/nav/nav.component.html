@@ -1,0 +1,23 @@
+<nav class="direction">
+    <span>
+      <strong class="blue">Identity<span class="blue-light">Money</span></strong>
+    </span>
+    <ul ngbNav #nav="ngbNav" [activeId]="2" class="nav direction-link">
+      <li ngbDropdown class="nav-item">
+          <a href (click)="false" class="nav-link" ngbDropdownToggle>Minha conta</a>
+          <div ngbDropdownMenu>
+            <button ngbDropdownItem routerLink="/my-wallet">Minha carteira</button>
+            <button ngbDropdownItem routerLink="/validation">Validações efetuadas</button>
+            <button ngbDropdownItem routerLink="/extract">Extrato</button>
+          </div>
+        </li>
+    <a href="">Notificações</a>
+    <a href="">Conversas</a>
+  </ul>
+</nav>  
+
+<section class="main">
+  <div class="background">
+    <router-outlet></router-outlet>
+  </div>
+</section>
