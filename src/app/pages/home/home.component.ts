@@ -10,6 +10,11 @@ export class HomeComponent implements OnInit {
   price = '0.300102930 ETH';
   validationStatus = 'Peding';
   panelOpenState = false;
+  user = 'Danilo Falco';
+  location = 'Osasco, SP';
+  validations = '12';
+  balanceStaking = '3.030012';
+  document = '35049705-5'
   constructor() { }
 
   ngOnInit(): void {

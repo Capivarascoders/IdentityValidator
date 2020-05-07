@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="345px" height="124px" viewBox="0 0 345 124" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>LIKES_GRAPH</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="0%" y2="71.8963854%" id="linearGradient-1">
+            <stop stop-color="#1DC6DA" offset="0%"></stop>
+            <stop stop-color="#05BFF3" offset="0%"></stop>
+            <stop stop-color="#05C0F3" offset="0%"></stop>
+            <stop stop-color="#05DEF9" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home-Banking-WebApp" transform="translate(-1009.000000, -851.000000)" stroke-width="1.9" stroke="url(#linearGradient-1)">
+            <g id="Accounts" transform="translate(58.000000, 266.000000)">
+                <g id="Lateral" transform="translate(896.000000, 0.000000)">
+                    <g id="Expenses-Report" transform="translate(11.000000, 424.000000)">
+                        <g id="Table" transform="translate(0.000000, 42.750000)">
+                            <g id="White-BG">
+                                <g id="Graph" transform="translate(0.741049, 0.000000)">
+                                    <g id="graph" transform="translate(-3.705243, 37.793478)">
+                                        <g id="graphs">
+                                            <path d="M47.2852686,169.834732 C83.1210248,169.834735 65.1297702,99.9026135 85.7619011,99.9026135 C106.394032,99.9026135 108.157176,129.51355 126.956677,120.469595 C148.730768,109.994639 145.859205,203.362839 160.332811,203.362839 C174.806416,203.362839 169.979006,83.2323755 190.284815,83.232376 C220.172344,83.2323768 222.8027,140.900637 245.145243,126.858256 C270.960366,110.633344 268.827415,165.719799 280.316104,169.834732 C293.970503,174.725364 294.953261,94.8213918 314.589601,83.232376 C325.940082,76.5335259 336.535336,101.665614 353.72623,112.726228 C370.917124,123.786842 384.522771,92.2384509 391.671037,92.2384509" id="LIKES_GRAPH"></path>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
