@@ -22,6 +22,12 @@ import { MatCardModule } from '@angular/material/card';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import  { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule} from '@angular/forms';
+import {MatRippleModule} from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -32,7 +38,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     ValidationComponent,
     ExtractComponent,
     RequestLootComponent,
-    HomeComponent
+    HomeComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -45,7 +52,13 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatCardModule,
     MatChipsModule,
     MatExpansionModule,
-    MatTabsModule
+    MatTabsModule,
+    MatStepperModule,
+    MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatRippleModule
   ],
   providers: [
     EthersContractService
