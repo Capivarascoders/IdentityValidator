@@ -1,0 +1,11 @@
+.background-yes {
+    height: 13%;
+    background: #26A69A;
+}
+
+.card-validation {
+    width: 88%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

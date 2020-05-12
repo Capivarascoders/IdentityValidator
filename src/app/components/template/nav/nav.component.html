@@ -1,20 +1,26 @@
-<nav class="direction">
-    <span>
+<mat-toolbar color="disabled" class="mat-elevation-z2">
+  <nav class="direction">
+    <span routerLink="/home" class="title-principal">
       <strong class="blue">Identity<span class="blue-light">Money</span></strong>
     </span>
     <ul ngbNav #nav="ngbNav" [activeId]="2" class="nav direction-link">
       <li ngbDropdown class="nav-item">
-          <a href (click)="false" class="nav-link" ngbDropdownToggle>My account</a>
-          <div ngbDropdownMenu>
-            <button ngbDropdownItem routerLink="/my-wallet">My wallet</button>
-            <button ngbDropdownItem routerLink="/validation">Validation carried out</button>
-            <button ngbDropdownItem routerLink="/extract">Extract</button>
-          </div>
-        </li>
-    <a href="">Notification</a>
-    <a href="">Messages</a>
-  </ul>
-</nav>  
+        <a href (click)="false" class="nav-link" ngbDropdownToggle>My account</a>
+        <div ngbDropdownMenu>
+          <button ngbDropdownItem routerLink="/my-wallet">My wallet</button>
+          <button ngbDropdownItem routerLink="/validation">Validation carried out</button>
+          <button ngbDropdownItem routerLink="/extract">Extract</button>
+        </div>
+      </li>
+
+      <p>
+        <span matBadge="4" matBadgeOverlap="false">Notification</span>
+      </p>
+      <a routerLink="/profile">Profile</a>
+    </ul>
+  </nav>
+</mat-toolbar>
+
 
 <section class="main">
   <div class="background">

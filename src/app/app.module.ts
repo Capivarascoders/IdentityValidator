@@ -10,24 +10,28 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavComponent } from './components/template/nav/nav.component';
 import { HeaderComponent } from './components/template/header/header.component';
 import { MyWalletComponent } from './pages/my-wallet/my-wallet.component';
-import { ValidationComponent } from './pages/validation/validation.component';
+import { ValidateComponent } from './components/validations/validate/validate.component';
 import { ExtractComponent } from './pages/extract/extract.component';
 import { RequestLootComponent } from './pages/request-loot/request-loot.component';
 import { HomeComponent } from './pages/home/home.component'
+import { PedingValidationsComponent } from './components/peding-validations/peding-validations.component';
+import { NotValidateComponent } from './components/validations/not-validate/not-validate.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
-import {MatChipsModule} from '@angular/material/chips';
-import {MatExpansionModule} from '@angular/material/expansion';
-import {MatTabsModule} from '@angular/material/tabs';
-import {MatStepperModule} from '@angular/material/stepper';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import  { MatInputModule } from '@angular/material/input';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule} from '@angular/forms';
-import {MatRippleModule} from '@angular/material/core';
+import { MatRippleModule } from '@angular/material/core';
+import {MatBadgeModule} from '@angular/material/badge';
 
 @NgModule({
   declarations: [
@@ -35,11 +39,13 @@ import {MatRippleModule} from '@angular/material/core';
     NavComponent,
     HeaderComponent,
     MyWalletComponent,
-    ValidationComponent,
+    ValidateComponent,
     ExtractComponent,
     RequestLootComponent,
     HomeComponent,
-    
+    PedingValidationsComponent,
+    NotValidateComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +64,8 @@ import {MatRippleModule} from '@angular/material/core';
     FormsModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatRippleModule
+    MatRippleModule,
+    MatBadgeModule
   ],
   providers: [
     EthersContractService

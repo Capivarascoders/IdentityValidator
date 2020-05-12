@@ -1,0 +1,21 @@
+.wallet-title-color {
+    color: #42A5F5;
+}
+.wallet-number {
+    font-size: 13px;
+    color: #BDBDBD;
+}
+.photo-identity {
+    width: 30%;
+}
+.identity {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.peding-main {
+    display: flex;
+    height: 90vh;
+    flex-direction: column;
+    justify-content: space-around;
+}

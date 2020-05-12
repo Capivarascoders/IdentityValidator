@@ -1,0 +1,35 @@
+.aside-content {
+    margin-top: 2%;
+    height: 100vh;
+}
+
+.card-aside {
+    height: 100vh;
+    width: 29vw;
+}
+
+.photo-dimension {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 2%;
+}
+
+.photo {
+    height: 50%;
+}
+
+.informations {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.main-profile {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
