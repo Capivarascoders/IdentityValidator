@@ -8,7 +8,6 @@ import { EthersContractService } from './services/ethers.contract.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavComponent } from './components/template/nav/nav.component';
-import { HeaderComponent } from './components/template/header/header.component';
 import { MyWalletComponent } from './pages/my-wallet/my-wallet.component';
 import { ValidateComponent } from './components/validations/validate/validate.component';
 import { ExtractComponent } from './pages/extract/extract.component';
@@ -17,6 +16,7 @@ import { HomeComponent } from './pages/home/home.component'
 import { PedingValidationsComponent } from './components/peding-validations/peding-validations.component';
 import { NotValidateComponent } from './components/validations/not-validate/not-validate.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { BalanceComponent } from './components/balance/balance.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -31,13 +31,15 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule} from '@angular/forms';
 import { MatRippleModule } from '@angular/material/core';
-import {MatBadgeModule} from '@angular/material/badge';
+import { MatBadgeModule } from '@angular/material/badge';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatTableModule} from '@angular/material/table';
+import { NotificationComponent } from './pages/notification/notification.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    HeaderComponent,
     MyWalletComponent,
     ValidateComponent,
     ExtractComponent,
@@ -45,7 +47,9 @@ import {MatBadgeModule} from '@angular/material/badge';
     HomeComponent,
     PedingValidationsComponent,
     NotValidateComponent,
-    ProfileComponent
+    ProfileComponent,
+    BalanceComponent,
+    NotificationComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +69,9 @@ import {MatBadgeModule} from '@angular/material/badge';
     ReactiveFormsModule,
     MatInputModule,
     MatRippleModule,
-    MatBadgeModule
+    MatBadgeModule,
+    FlexLayoutModule,
+    MatTableModule
   ],
   providers: [
     EthersContractService

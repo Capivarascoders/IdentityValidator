@@ -1,6 +1,6 @@
-<header class="spacing">
-    <p>Home</p>
-</header>
+<div>
+    <app-balance></app-balance>
+</div>
 
 <main class="main-spacing">
     <section class="main-home">
@@ -12,17 +12,17 @@
                 </div>
             </mat-card-header>
 
-            <section>
-                <app-peding-validations></app-peding-validations>
+            <section class="peding-section">
+                    <app-peding-validations></app-peding-validations>
             </section>
         </mat-card>
 
-        <div class="last-validations">
+        <div class="validates-notValidate">
             <mat-card class="mat-elevation-z4 validations">
-                <app-validate></app-validate>
+                <app-validate class="last-validations"></app-validate>
             </mat-card>
             <mat-card class="mat-elevation-z4 validations">
-                <app-not-validate></app-not-validate>
+                <app-not-validate class="last-validations"></app-not-validate>
             </mat-card>
         </div>
     </section>

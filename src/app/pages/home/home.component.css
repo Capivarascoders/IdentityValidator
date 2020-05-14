@@ -29,7 +29,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 100%;
+    width: 70%;
 }
 
 .wallet {
@@ -54,16 +54,10 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    height: 100vh;
+    height: 70vh;
 }
 
 .validations {
-    margin-top: 2%;
-    height: 70vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
     width: 45%;
 }
 
@@ -74,11 +68,23 @@
     align-items: center;
 }
 
-.last-validations {
-    display: flex;
-    justify-content: space-between;
-}
-
 .header-pending {
     width: 100%;
+}
+
+.validates-notValidate {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2%;
+}
+
+.peding-section {
+    width: 50%;
+}
+
+.last-validation {
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }

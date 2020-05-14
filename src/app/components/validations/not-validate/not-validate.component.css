@@ -1,4 +1,19 @@
 .background-no {
-    height: 13%;
     background: #EF5350;
+    height: 13%;
+    color: #FFF;
+}
+
+.validate-header {
+    font-size: 1.3em;
+}
+
+
+.card-validation {
+    width: 88%;
+    height: 30%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 2%;
 }

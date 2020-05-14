@@ -1,26 +1,29 @@
-<mat-toolbar color="disabled" class="mat-elevation-z2">
-  <nav class="direction">
-    <span routerLink="/home" class="title-principal">
-      <strong class="blue">Identity<span class="blue-light">Money</span></strong>
-    </span>
-    <ul ngbNav #nav="ngbNav" [activeId]="2" class="nav direction-link">
-      <li ngbDropdown class="nav-item">
-        <a href (click)="false" class="nav-link" ngbDropdownToggle>My account</a>
-        <div ngbDropdownMenu>
-          <button ngbDropdownItem routerLink="/my-wallet">My wallet</button>
-          <button ngbDropdownItem routerLink="/validation">Validation carried out</button>
-          <button ngbDropdownItem routerLink="/extract">Extract</button>
-        </div>
-      </li>
+<mat-toolbar class="mat-elevation-z3">
+  <mat-toolbar-row fxLayoutAlign="space-between center">
+    <nav fxLayout="row">
+      <span routerLink="/home" class="title-principal">
+        <strong class="blue">Identity<span class="blue-light">Money</span></strong>
+      </span>
+      <div *ngIf="!deviceXs">
+        <button mat-button routerLink="/validation">Validations</button>
+        <button mat-button routerLink="/extract">Extract</button>
+        <button mat-button>Notification</button>
+        <button mat-button routerLink="/profile">Profile</button>
+      </div>
+    </nav>
+  </mat-toolbar-row>
 
-      <p>
-        <span matBadge="4" matBadgeOverlap="false">Notification</span>
-      </p>
-      <a routerLink="/profile">Profile</a>
-    </ul>
-  </nav>
+  <mat-toolbar-row *ngIf="deviceXs">
+    <nav fxLayout="row">
+      <div *ngIf="deviceXs" fxLayoutAlign="space-between end">
+        <button mat-button routerLink="/validation">Validations</button>
+        <button mat-button routerLink="/extract">Extract</button>
+        <button mat-button>Notification</button>
+        <button mat-button routerLink="/profile">Profile</button>
+      </div>
+    </nav>
+  </mat-toolbar-row>
 </mat-toolbar>
-
 
 <section class="main">
   <div class="background">
