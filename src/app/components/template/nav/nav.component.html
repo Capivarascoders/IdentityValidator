@@ -6,11 +6,10 @@
       </span>
       <div *ngIf="!deviceXs">
         <button mat-button routerLink="/validation">Validations</button>
-        <button mat-button routerLink="/extract">Extract</button>
-        <button mat-button>Notification</button>
         <button mat-button routerLink="/profile">Profile</button>
       </div>
     </nav>
+    <app-balance></app-balance>
     <button  mat-raised-button color="primary">Login</button>
 
   </mat-toolbar-row>
@@ -19,8 +18,6 @@
     <nav fxLayout="row">
       <div *ngIf="deviceXs" fxLayoutAlign="space-between end">
         <button mat-button routerLink="/validation">Validations</button>
-        <button mat-button routerLink="/extract">Extract</button>
-        <button mat-button routerLink="/notification">Notification</button>
         <button mat-button routerLink="/profile">Profile</button>
       </div>
 

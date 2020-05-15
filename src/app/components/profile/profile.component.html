@@ -3,62 +3,27 @@
         <button class="button" mat-raised-button color="primary" routerLink="/home">Back to home</button>
         <mat-card class="mat-elevation-z4 card-aside">
             <figure class="photo-dimension">
-                <img class="photo" src="../../../assets//img/photo.png">
-                <p class="title">{{ user }}</p>
-                <p> {{ location }} </p>
-                <a href="">Configuration</a>
+                <img class="photo" src="../../../assets//img/avatar.png">
+                <p>Status: {{ status }}</p>
+                <a href="https://rinkeby.etherscan.io/tx/0x869d4cc1f8702ba4c2268baf4b934f1c87a9972b9dd32889d41db73e879b1684" target="_blank" class="title">{{ address }}</a>
             </figure>
             <section class="informations">
                 <div>
                     <p class="title">{{ validations }}</p>
                     <p class="wallet-number">Validations perfomed</p>
                 </div>
-                <div>
+                <div >
                     <p class="title">{{ balanceStaking }}</p>
                     <p class="wallet-number">ETH staking</p>
                 </div>
+
             </section>
-            <section>
-                <mat-tab-group animationDuration="2000ms">
-                    <mat-tab id="mat-tab-body-content" label="Day">
-                        <img src="../../../assets/img/graphic.svg">
-                    </mat-tab>
-                    <mat-tab class="graphic" label="Week">
-                        <img src="../../../assets/img/graphic.svg">
-                    </mat-tab>
-                    <mat-tab class="graphic" label="Month">
-                        <img src="../../../assets/img/graphic.svg">
-                    </mat-tab>
-                    <mat-tab class="graphic" label="Years">
-                        <img src="../../../assets/img/graphic.svg">
-                    </mat-tab>
-                </mat-tab-group>
-            </section>
-            <hr>
-            <p class="title">Atividades recentes</p>
-            <p class="subtitle">March</p>
-            <section class="actives">
-                <div class="date">
-                    <div>
-                        <p class="font-color">MAR</p>
-                        <p>20</p>
-                    </div>
-                    <div>
-                        <p>Atividade 1</p>
-                        <p class="font-color">Informações</p>
-                    </div>
-                </div>
-                <div class="date">
-                    <div>
-                        <p class="font-color">MAR</p>
-                        <p>20</p>
-                    </div>
-                    <div>
-                        <p>Atividade 1</p>
-                        <p class="font-color">Informações</p>
-                    </div>
-                </div>
-            </section>
+            <div class="status">
+                <button mat-raised-button class="button-color">Ativar</button>
+                <button mat-raised-button class="button-color">Desativar</button>
+            </div>
+            <button routerLink="/request-loot" mat-raised-button class="button-color">Request loot</button>
+
         </mat-card>
     </section> 
 </div>

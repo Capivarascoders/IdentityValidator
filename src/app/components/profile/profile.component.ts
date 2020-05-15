@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  location = 'Osasco, SP';
   validations = '12';
   balanceStaking = '3.030012';
-  user = 'Danilo Falco';
+  address = '0x09c15427Fed859ed46AFFB996bCd62f3b9180137';
+  status = 'Ativo'
 
   constructor() { }
 
