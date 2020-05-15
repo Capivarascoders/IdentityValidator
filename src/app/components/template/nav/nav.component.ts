@@ -11,7 +11,6 @@ import { SubjectType } from 'src/app/models/subject-type.enum';
 export class NavComponent {
 
   @Input() deviceXs: boolean;
-  wallet: string;
   logged: boolean;
 
   constructor(
@@ -19,10 +18,6 @@ export class NavComponent {
   ) { }
 
   ngOnInit(): void {
-    this.portisService.onEvent.pipe(filter(item => item.type === SubjectType.wallet)).subscribe((result) => {
-      console.log(`nav: ${result.type} | ${result.data}`);
-      this.wallet = result.data;
-    });
     this.portisService.onEvent.pipe(filter(item => item.type === SubjectType.logged)).subscribe((result) => {
       console.log(`nav: ${result.type} | ${result.data}`);
       this.logged = result.data;

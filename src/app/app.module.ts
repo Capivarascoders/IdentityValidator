@@ -7,16 +7,13 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavComponent } from './components/template/nav/nav.component';
-import { MyWalletComponent } from './pages/my-wallet/my-wallet.component';
 import { ValidateComponent } from './components/validations/validate/validate.component';
-import { ExtractComponent } from './pages/extract/extract.component';
 import { RequestLootComponent } from './pages/request-loot/request-loot.component';
 import { HomeComponent } from './pages/home/home.component'
 import { PedingValidationsComponent } from './components/peding-validations/peding-validations.component';
 import { NotValidateComponent } from './components/validations/not-validate/not-validate.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { BalanceComponent } from './components/balance/balance.component';
-import { NotificationComponent } from './pages/notification/notification.component';
 import { SignupComponent } from './pages/signup/signup.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -43,16 +40,13 @@ import { ContractService } from './services/contract.service';
   declarations: [
     AppComponent,
     NavComponent,
-    MyWalletComponent,
     ValidateComponent,
-    ExtractComponent,
     RequestLootComponent,
     HomeComponent,
     PedingValidationsComponent,
     NotValidateComponent,
     ProfileComponent,
     BalanceComponent,
-    NotificationComponent,
     SignupComponent
   ],
   imports: [
