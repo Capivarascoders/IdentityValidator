@@ -1,0 +1,29 @@
+.main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-general {
+    height: 80vh;
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: #FAFAFA;
+}
+
+.card-form {
+    width: 20%;
+    height: 20vh;
+    cursor: pointer;
+}
+
+.stepper-principal {
+    height: 70%;
+}
+
+.font-title {
+    color: #42A5F5;
+}

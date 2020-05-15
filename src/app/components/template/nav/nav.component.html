@@ -1,20 +1,32 @@
-<nav class="direction">
-    <span>
-      <strong class="blue">Identity<span class="blue-light">Money</span></strong>
-    </span>
-    <ul ngbNav #nav="ngbNav" [activeId]="2" class="nav direction-link">
-      <li ngbDropdown class="nav-item">
-          <a href (click)="false" class="nav-link" ngbDropdownToggle>Minha conta</a>
-          <div ngbDropdownMenu>
-            <button ngbDropdownItem routerLink="/my-wallet">Minha carteira</button>
-            <button ngbDropdownItem routerLink="/validation">Validações efetuadas</button>
-            <button ngbDropdownItem routerLink="/extract">Extrato</button>
-          </div>
-        </li>
-    <a href="">Notificações</a>
-    <a href="">Conversas</a>
-  </ul>
-</nav>  
+<mat-toolbar class="mat-elevation-z3">
+  <mat-toolbar-row fxLayoutAlign="space-between center">
+    <nav fxLayout="row">
+      <span routerLink="/home" class="title-principal">
+        <strong class="blue">Identity<span class="blue-light">Money</span></strong>
+      </span>
+      <div *ngIf="!deviceXs">
+        <button mat-button routerLink="/validation">Validations</button>
+        <button mat-button routerLink="/extract">Extract</button>
+        <button mat-button>Notification</button>
+        <button mat-button routerLink="/profile">Profile</button>
+      </div>
+    </nav>
+    <button  mat-raised-button color="primary">Login</button>
+
+  </mat-toolbar-row>
+
+  <mat-toolbar-row *ngIf="deviceXs">
+    <nav fxLayout="row">
+      <div *ngIf="deviceXs" fxLayoutAlign="space-between end">
+        <button mat-button routerLink="/validation">Validations</button>
+        <button mat-button routerLink="/extract">Extract</button>
+        <button mat-button routerLink="/notification">Notification</button>
+        <button mat-button routerLink="/profile">Profile</button>
+      </div>
+
+    </nav>
+  </mat-toolbar-row>
+</mat-toolbar>
 
 <section class="main">
   <div class="background">

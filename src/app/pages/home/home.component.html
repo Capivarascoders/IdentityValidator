@@ -1,81 +1,29 @@
-<header class="spacing">
-    <h1>Validações pendentes</h1>
-    <button mat-raised-button class="button-color">Solicitar saque</button>
-</header>  
+<div>
+    <app-balance></app-balance>
+</div>
 
-<main class="main-home">
+<main class="main-spacing">
+    <section class="main-home">
+        <mat-card class="cards mat-elevation-z4">
+            <mat-card-header class="header-pending">
+                <div class="title-validations">
+                    <p class="title">Pending validation</p>
+                    <button routerLink="/request-loot" mat-raised-button class="button-color">Request loot</button>
+                </div>
+            </mat-card-header>
 
-    <section class="cards">
-        <mat-card class="card-validation">
-
-            <div class="wallet">
-                <p class="wallet-title-color">Wallet para validação</p>
-                <p class="wallet-number">{{ wallet }}</p>
-            </div>
-    
-            <div class="price">
-                <p>{{ price }}</p>
-            </div>
-    
-            <div class="validation-status">
-                <p>{{ validationStatus }}</p>
-            </div>
-        </mat-card>
-        <mat-card class="card-validation">
-    
-            <div class="wallet">
-                <p class="wallet-title-color">Wallet para validação</p>
-                <p class="wallet-number">{{ wallet }}</p>
-            </div>
-    
-            <div class="price">
-                <p>{{ price }}</p>
-            </div>
-    
-            <div class="validation-status">
-                <p>{{ validationStatus }}</p>
-            </div>
+            <section class="peding-section">
+                    <app-peding-validations></app-peding-validations>
+            </section>
         </mat-card>
 
-        <mat-card class="card-validation">
-    
-            <div class="wallet">
-                <p class="wallet-title-color">Wallet para validação</p>
-                <p class="wallet-number">{{ wallet }}</p>
-            </div>
-    
-            <div class="price">
-                <p>{{ price }}</p>
-            </div>
-    
-            <div class="validation-status">
-                <p>{{ validationStatus }}</p>
-            </div>
-        </mat-card>
+        <div class="validates-notValidate">
+            <mat-card class="mat-elevation-z4 validations">
+                <app-validate class="last-validations"></app-validate>
+            </mat-card>
+            <mat-card class="mat-elevation-z4 validations">
+                <app-not-validate class="last-validations"></app-not-validate>
+            </mat-card>
+        </div>
     </section>
-
-    <aside class="aside-content">
-        <mat-card class="card-aside"></mat-card>
-    </aside>
 </main>
-
-<section class="validations">
-    <h2>Ultimas validações</h2>
-
-    <mat-card class="card-validation background-yes">
-        <p class="wallet-title">Wallet validada</p>
-        <p class="wallet-number">{{ wallet }}</p>
-        <img src="../../../assets//img/yes.svg">
-    </mat-card>
-    <mat-card class="card-validation background-yes">
-        <p class="wallet-title">Wallet validada</p>
-        <p class="wallet-number">{{ wallet }}</p>
-        <img src="../../../assets//img/yes.svg">
-    </mat-card>
-    <mat-card class="card-validation background-no">
-        <p class="wallet-title">Wallet validada</p>
-        <p class="wallet-number">{{ wallet }}</p>
-        <img src="../../../assets//img/no.svg">
-    </mat-card>
-</section>
-
