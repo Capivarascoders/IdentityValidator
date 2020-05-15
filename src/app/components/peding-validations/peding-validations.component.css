@@ -15,7 +15,7 @@
 }
 .peding-main {
     display: flex;
-    height: 90vh;
+    height: 60vh;
     flex-direction: column;
     justify-content: space-around;
 }

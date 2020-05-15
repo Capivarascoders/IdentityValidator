@@ -1,11 +1,18 @@
 .background-yes {
     height: 13%;
     background: #26A69A;
+    color: #FFF;
 }
 
 .card-validation {
     width: 88%;
+    height: 30%;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin-top: 2%;
+}
+
+.validate-header {
+    font-size: 1.3em;
 }
