@@ -17,6 +17,8 @@ import { PedingValidationsComponent } from './components/peding-validations/pedi
 import { NotValidateComponent } from './components/validations/not-validate/not-validate.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { BalanceComponent } from './components/balance/balance.component';
+import { NotificationComponent } from './pages/notification/notification.component';
+import { SignupComponent } from './pages/signup/signup.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -33,8 +35,8 @@ import { ReactiveFormsModule} from '@angular/forms';
 import { MatRippleModule } from '@angular/material/core';
 import { MatBadgeModule } from '@angular/material/badge';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {MatTableModule} from '@angular/material/table';
-import { NotificationComponent } from './pages/notification/notification.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,8 @@ import { NotificationComponent } from './pages/notification/notification.compone
     NotValidateComponent,
     ProfileComponent,
     BalanceComponent,
-    NotificationComponent
+    NotificationComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -71,7 +74,8 @@ import { NotificationComponent } from './pages/notification/notification.compone
     MatRippleModule,
     MatBadgeModule,
     FlexLayoutModule,
-    MatTableModule
+    MatTableModule,
+    MatSelectModule
   ],
   providers: [
     EthersContractService

@@ -11,6 +11,8 @@
         <button mat-button routerLink="/profile">Profile</button>
       </div>
     </nav>
+    <button  mat-raised-button color="primary">Login</button>
+
   </mat-toolbar-row>
 
   <mat-toolbar-row *ngIf="deviceXs">
@@ -18,9 +20,10 @@
       <div *ngIf="deviceXs" fxLayoutAlign="space-between end">
         <button mat-button routerLink="/validation">Validations</button>
         <button mat-button routerLink="/extract">Extract</button>
-        <button mat-button>Notification</button>
+        <button mat-button routerLink="/notification">Notification</button>
         <button mat-button routerLink="/profile">Profile</button>
       </div>
+
     </nav>
   </mat-toolbar-row>
 </mat-toolbar>
