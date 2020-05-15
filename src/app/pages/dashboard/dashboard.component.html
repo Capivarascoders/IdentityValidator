@@ -1,0 +1,29 @@
+<header class="spacing">
+    <p>Home</p>
+</header> -->
+
+<main class="main-spacing">
+    <section class="main-home">
+        <mat-card class="cards mat-elevation-z4">
+            <mat-card-header class="header-pending">
+                <div class="title-validations">
+                    <p class="title">Pending validation</p>
+                    <button routerLink="/request-loot" mat-raised-button class="button-color">Request loot</button>
+                </div>
+            </mat-card-header>
+
+            <section>
+                <app-peding-validations></app-peding-validations>
+            </section>
+        </mat-card>
+
+        <div class="last-validations">
+            <mat-card class="mat-elevation-z4 validations">
+                <app-validate></app-validate>
+            </mat-card>
+            <mat-card class="mat-elevation-z4 validations">
+                <app-not-validate></app-not-validate>
+            </mat-card>
+        </div>
+    </section>
+</main>

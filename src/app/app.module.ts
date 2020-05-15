@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { EthersContractService } from './services/ethers.contract.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavComponent } from './components/template/nav/nav.component';
@@ -35,6 +34,8 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatTableModule} from '@angular/material/table';
 import { NotificationComponent } from './pages/notification/notification.component';
+import { PortisService } from './services/portis.service';
+import { ContractService } from './services/contract.service';
 
 @NgModule({
   declarations: [
@@ -74,7 +75,8 @@ import { NotificationComponent } from './pages/notification/notification.compone
     MatTableModule
   ],
   providers: [
-    EthersContractService
+    PortisService,
+    ContractService
   ],
   bootstrap: [
     AppComponent
