@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { PortisService } from 'src/app/services/portis.service';
+import { filter } from 'rxjs/operators';
+import { SubjectType } from 'src/app/models/subject-type.enum';
+import { ContractService } from 'src/app/services/contract.service';
 
 @Component({
   selector: 'app-balance',
@@ -6,11 +10,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./balance.component.css']
 })
 export class BalanceComponent implements OnInit {
-  balance = '0.0005889'
+  balance: number = 0;
 
-  constructor() { }
+  constructor(
+    private contractService: ContractService
+  ) { }
 
   ngOnInit(): void {
+    this.contractService.onEvent.pipe(filter(item => item.type === SubjectType.balance)).subscribe((result) => {
+      this.balance = result.data;
+    });
   }
-
 }

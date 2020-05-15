@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { EthersContractService } from './services/ethers.contract.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavComponent } from './components/template/nav/nav.component';
@@ -28,12 +27,14 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
-import { ReactiveFormsModule} from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MatRippleModule } from '@angular/material/core';
 import { MatBadgeModule } from '@angular/material/badge';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatTableModule } from '@angular/material/table';
 import { MatSelectModule } from '@angular/material/select';
+import { PortisService } from './services/portis.service';
+import { ContractService } from './services/contract.service';
 
 @NgModule({
   declarations: [
@@ -72,7 +73,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatSelectModule
   ],
   providers: [
-    EthersContractService
+    PortisService,
+    ContractService
   ],
   bootstrap: [
     AppComponent

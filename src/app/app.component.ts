@@ -1,5 +1,4 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { EthersContractService } from './services/ethers.contract.service';
 import { MediaObserver, MediaChange } from '@angular/flex-layout';
 import { Subscription } from 'rxjs';
 
@@ -12,17 +11,17 @@ export class AppComponent implements OnInit, OnDestroy {
   mediaSub: Subscription;
   deviceXs: boolean;
 
-  constructor(public mediaObserver:MediaObserver) {}
+  constructor(public mediaObserver: MediaObserver) { }
 
   ngOnInit(): void {
-    this.mediaSub = this.mediaObserver.media$.subscribe((result:MediaChange) => {
+    this.mediaSub = this.mediaObserver.media$.subscribe((result: MediaChange) => {
       console.log(result.mqAlias);
       this.deviceXs = result.mqAlias === 'xs' ? true : false;
-    })
+    });
 
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     this.mediaSub.unsubscribe();
   }
 }

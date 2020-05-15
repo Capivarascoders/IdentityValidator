@@ -10,7 +10,8 @@
       </div>
     </nav>
     <app-balance></app-balance>
-    <button  mat-raised-button color="primary">Login</button>
+    <button *ngIf="!logged" mat-raised-button color="primary" (click)="login()">Login</button>
+    <button *ngIf="logged" mat-raised-button color="primary" (click)="logout()">Logout</button>
 
   </mat-toolbar-row>
 
