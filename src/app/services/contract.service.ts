@@ -90,6 +90,14 @@ export class ContractService extends SubjectService {
         );
     }
 
+    public async getIdsDataToBeValidatedIdByValidatorId(
+        validatorId: number
+    ) {
+        return await this.contractInstance.getIdsDataToBeValidatedIdByValidatorId(
+            validatorId
+        );
+    }
+
     public async getIdsDataToBeValidatedIdByPersonaId(
         personaId: number
     ) {
