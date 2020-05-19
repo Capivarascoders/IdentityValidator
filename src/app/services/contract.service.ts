@@ -11,43 +11,46 @@ import { ValidationStatus } from '../models/validation-status.enum';
 
 @Injectable()
 export class ContractService extends SubjectService {
-    private provider: any;
+
     private contractInstance: any;
+    private provider: any;
+    private wallet: string;
 
     constructor(
         private portisService: PortisService
     ) {
         super();
 
+        this.portisService.onEvent.pipe(filter(item => item.type === SubjectType.wallet)).subscribe((result) => {
+            this.wallet = result.data;
+        });
+
         this.portisService.onEvent.pipe(filter(item => item.type === SubjectType.provider)).subscribe((provider) => {
-            this.provider = provider.data;
+            if (provider.data) {
+                this.provider = new ethers.providers.Web3Provider(provider.data);
+
+                const signer = this.provider.getSigner();
+
+                this.contractInstance = new ethers.Contract(
+                    environment.identityContractAddress,
+                    Identity.abi,
+                    signer
+                );
+
+                if (this.wallet) {
+                    this.provider
+                        .getBalance(this.wallet)
+                        .then((result) => {
+                            const balanceInEther = ethers.utils.formatEther(result);
+                            this.dispatchEvent({ type: SubjectType.balance, data: balanceInEther });
+                        });
+                }
+            }
         });
     }
 
-    public instanciateContract() {
-        if (!environment.identityContractAddress) {
-            throw new Error('invalid contract address!');
-        }
-
-        if (!Identity || !Identity.abi) {
-            throw new Error('invalid contract json, try to run truffle compile!');
-        }
-
-        if (!this.provider) {
-            throw new Error('invalid provider!');
-        }
-
-        this.provider = new ethers.providers.Web3Provider(this.provider);
-
-        const signer = this.provider.getSigner();
-
-        this.contractInstance = new ethers.Contract(
-            environment.identityContractAddress,
-            Identity.abi,
-            signer
-        );
-
-        console.log(`contractInstance: ${this.contractInstance}`);
+    public async getBalance(address) {
+        return await this.provider.getBalance(address);
     }
 
     public async addValidator(strategy: ValidationCostStrategy, price: number) {

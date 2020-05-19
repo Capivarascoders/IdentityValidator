@@ -10,6 +10,9 @@ export class PedingValidationsComponent implements OnInit {
   price = '0.300102930 ETH';
   document = '35049705-5';
 
+  panelOpenState = false;
+
+
   constructor() { }
 
   ngOnInit(): void {

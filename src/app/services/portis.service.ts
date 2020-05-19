@@ -25,6 +25,7 @@ export class PortisService extends SubjectService {
             this.dispatchEvent({ type: SubjectType.wallet, data: null });
             this.dispatchEvent({ type: SubjectType.provider, data: null });
             this.dispatchEvent({ type: SubjectType.logged, data: false });
+            this.dispatchEvent({ type: SubjectType.balance, data: 0 });
         });
     }
 

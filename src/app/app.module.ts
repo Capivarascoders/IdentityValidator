@@ -15,6 +15,9 @@ import { NotValidateComponent } from './components/validations/not-validate/not-
 import { ProfileComponent } from './components/profile/profile.component';
 import { BalanceComponent } from './components/balance/balance.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { PortisService } from './services/portis.service';
+import { ContractService } from './services/contract.service';
+import { AllValidationsComponent } from './pages/all-validations/all-validations.component'; 
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -27,14 +30,13 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
-import { ReactiveFormsModule} from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MatRippleModule } from '@angular/material/core';
 import { MatBadgeModule } from '@angular/material/badge';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatTableModule } from '@angular/material/table';
 import { MatSelectModule } from '@angular/material/select';
-import { PortisService } from './services/portis.service';
-import { ContractService } from './services/contract.service';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,8 @@ import { ContractService } from './services/contract.service';
     NotValidateComponent,
     ProfileComponent,
     BalanceComponent,
-    SignupComponent
+    SignupComponent,
+    AllValidationsComponent
   ],
   imports: [
     BrowserModule,
@@ -70,7 +73,8 @@ import { ContractService } from './services/contract.service';
     MatBadgeModule,
     FlexLayoutModule,
     MatTableModule,
-    MatSelectModule
+    MatSelectModule,
+    MatPaginatorModule
   ],
   providers: [
     PortisService,

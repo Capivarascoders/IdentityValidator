@@ -5,10 +5,11 @@
         <strong class="blue">Identity<span class="blue-light">Money</span></strong>
       </span>
       <div *ngIf="!deviceXs">
-        <button mat-button routerLink="/validation">Validations</button>
+        <button mat-button routerLink="/all-validation">Validations</button>
         <button mat-button routerLink="/profile">Profile</button>
       </div>
     </nav>
+    <app-balance></app-balance>
     <button *ngIf="!logged" mat-raised-button color="primary" (click)="login()">Login</button>
     <button *ngIf="logged" mat-raised-button color="primary" (click)="logout()">Logout</button>
 
@@ -17,7 +18,7 @@
   <mat-toolbar-row *ngIf="deviceXs">
     <nav fxLayout="row">
       <div *ngIf="deviceXs" fxLayoutAlign="space-between end">
-        <button mat-button routerLink="/validation">Validations</button>
+        <button mat-button routerLink="/all-validation">Validations</button>
         <button mat-button routerLink="/profile">Profile</button>
       </div>
     </nav>
