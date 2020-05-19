@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  selected = "Charged"
-
+  selected = 1;
+  
   constructor() { }
 
   ngOnInit(): void {

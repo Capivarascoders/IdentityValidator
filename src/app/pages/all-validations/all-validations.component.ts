@@ -1,6 +1,10 @@
+import { PortisService } from './../../services/portis.service';
+import { ContractService } from 'src/app/services/contract.service';
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
+import { filter } from 'rxjs/operators';
+import { SubjectType } from 'src/app/models/subject-type.enum';
 
 @Component({
   selector: 'app-all-validations',
@@ -9,15 +13,26 @@ import {MatTableDataSource} from '@angular/material/table';
 })
 export class AllValidationsComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+  dataSource;
+  wallet;
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
-  constructor() { }
+  constructor(private contractService: ContractService, private portisService: PortisService) {
+    this.portisService.onEvent.pipe(filter(item => item.type === SubjectType.wallet)).subscribe((result) => {
+      this.wallet = result.data;
+    });
+   }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise <void> {
     this.dataSource.paginator = this.paginator;
+
+    const validator = await this.contractService.getValidatorByAddress(this.wallet);
+    const dateToBeValidate = await this.contractService.getIdsDataToBeValidatedIdByValidatorId(validator.validatorId);
+
   }
+
+
 
 }
 

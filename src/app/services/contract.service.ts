@@ -53,6 +53,12 @@ export class ContractService extends SubjectService {
         return await this.provider.getBalance(address);
     }
 
+    public async isValidator(address: string) {
+        return await this.contractInstance.isValidator(
+            address
+        );
+    }
+
     public async addValidator(strategy: ValidationCostStrategy, price: number) {
         await this.contractInstance.addValidator(
             strategy,

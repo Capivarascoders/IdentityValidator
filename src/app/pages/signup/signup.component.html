@@ -1,22 +1,25 @@
 <section fxLayoutAlign="center center" fxFlexFill>
     <main>
         <header>
-            <p>IdentityMoney</p>
-        </header>
-        <header class="content">
             <mat-card class="card main">
                 <mat-toolbar class="toolbar">Welcome</mat-toolbar>
                 <h1>Select one strategy</h1>
-                <form>
+                <form class="form-strategy">
                     <mat-form-field>
                         <mat-label>Select an option</mat-label>
                         <mat-select [(value)]="selected">
-                            <mat-option value="charged">For charged</mat-option>
-                            <mat-option value="free">For free</mat-option>
+                            <mat-option value="1">For charged</mat-option>
+
+                            <mat-option value="0">For free</mat-option>
                         </mat-select>
                     </mat-form-field>
+                    <mat-form-field *ngIf="selected == 1" appearance="fill">
+                        <mat-label>Input</mat-label>
+                        <input matInput>
+                    </mat-form-field>
                     <p>You selected: {{selected}}</p>
-                    <button mat-raised-button>Login</button>
+                    <button mat-raised-button>Add validator</button>
+                    <p>Do you need 1 ether of staking</p>
                 </form>
             </mat-card>
         </header>

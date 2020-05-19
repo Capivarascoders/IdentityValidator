@@ -5,8 +5,9 @@
         <strong class="blue">Identity<span class="blue-light">Money</span></strong>
       </span>
       <div *ngIf="!deviceXs">
-        <button mat-button routerLink="/all-validation">Validations</button>
-        <button mat-button routerLink="/profile">Profile</button>
+        <button *ngIf="logged && isValidator" mat-button routerLink="/all-validation">Validations</button>
+        <button *ngIf="logged && isValidator" mat-button routerLink="/profile">Profile</button>
+        <button *ngIf="logged && !isValidator" mat-button routerLink="/signup">Signup</button>
       </div>
     </nav>
     <app-balance></app-balance>

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { PortisService } from 'src/app/services/portis.service';
+import { filter } from 'rxjs/operators';
+import { SubjectType } from 'src/app/models/subject-type.enum';
+import { ContractService } from 'src/app/services/contract.service';
 
 @Component({
   selector: 'app-home',
@@ -8,10 +12,21 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   validationStatus = 'Peding';
   panelOpenState = false;
+  isValidator: boolean;
+  wallet: string;
 
-  constructor() { }
+  constructor(
+    private portisService: PortisService,
+    private contractService: ContractService) { 
+      this.portisService.onEvent.pipe(filter(item => item.type === SubjectType.wallet)).subscribe((result) => {
+        this.wallet = result.data;
+      });
+    }
 
-  ngOnInit(): void {
+   ngOnInit(): void {
+    // this.contractService.isValidator(this.wallet).then((result) => { console.log(result) });
+    console.log(this.contractService)
+    
   }
 
 }

@@ -11,16 +11,19 @@ import { ContractService } from 'src/app/services/contract.service';
 })
 export class NavComponent {
 
+  isValidator: boolean;
+
   @Input() deviceXs: boolean;
   logged: boolean;
   wallet: string;
   balance: any;
 
   constructor(
-    private portisService: PortisService
+    private portisService: PortisService,
+    private contractService: ContractService
   ) { }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise <void> {
     this.portisService.onEvent.pipe(filter(item => item.type === SubjectType.logged)).subscribe((result) => {
       this.logged = result.data;
     });
@@ -28,6 +31,8 @@ export class NavComponent {
     this.portisService.onEvent.pipe(filter(item => item.type === SubjectType.wallet)).subscribe((result) => {
       this.wallet = result.data;
     });
+
+    // this.isValidator = await this.contractService.isValidator(this.wallet);
   }
 
   login() {
