@@ -1,7 +1,5 @@
-.content {
-    position: relative;
-    width: 100%;
-    text-align: center;
+.main {
+    padding: 0;
 }
 
 .toolbar {
@@ -17,8 +15,8 @@
 
 .card {
     width: 30vw;
-    height: 45vh;
-    margin-top: 35%;
+    height: 60vh;
+    margin-top: 15%;
 }
 
 mat-card {
@@ -26,16 +24,14 @@ mat-card {
 }
 
 h1 {
+    text-align: center;
     margin-top: 5%;
-}
-.main {
-    padding: 0;
 }
 
 p {
-    color: #fff;
+    margin-top: 5%;
     text-align: center;
-    font-size: 2.3rem;
+    font-size: 1.3em;
 }
 
 .form-strategy {

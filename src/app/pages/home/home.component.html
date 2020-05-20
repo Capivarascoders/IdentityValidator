@@ -8,7 +8,7 @@
             </mat-card-header>
 
             <section class="peding-section">
-                    <app-peding-validations></app-peding-validations>
+                <app-peding-validations></app-peding-validations>
             </section>
         </mat-card>
 
@@ -21,8 +21,16 @@
             </mat-card>
         </div>
     </section>
-
-    <section *ngIf="!isValidator" >
-        <p>Oi</p>
-    </section>
 </main>
+
+<section *ngIf="!isValidator" class="home-notValidator">
+    <div class="text-home">
+        <p class="title-color">Welcome to IdentityMoney Validator</p>
+        <p class="paragraph">You need to add yourself as a validator before you can see your validation dashboard, so go
+            to <strong>"Add validator"</strong> to proceed.</p>
+    </div>
+
+    <figure>
+        <img src="../../../assets/img/ethereum.svg">
+    </figure>
+</section>
