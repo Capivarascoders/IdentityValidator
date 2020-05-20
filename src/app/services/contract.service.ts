@@ -8,6 +8,7 @@ import { SubjectService } from './subject.service';
 import { SubjectType } from '../models/subject-type.enum';
 import { ValidationCostStrategy } from '../models/validation-cost-strategy.enum';
 import { ValidationStatus } from '../models/validation-status.enum';
+import { runInThisContext } from 'vm';
 
 @Injectable()
 export class ContractService extends SubjectService {
@@ -20,6 +21,8 @@ export class ContractService extends SubjectService {
         private portisService: PortisService
     ) {
         super();
+
+        this.dispatchEvent({ type: SubjectType.isvalidator, data: false });
 
         this.portisService.onEvent.pipe(filter(item => item.type === SubjectType.wallet)).subscribe((result) => {
             this.wallet = result.data;
@@ -44,6 +47,20 @@ export class ContractService extends SubjectService {
                             const balanceInEther = ethers.utils.formatEther(result);
                             this.dispatchEvent({ type: SubjectType.balance, data: balanceInEther });
                         });
+                }
+
+                if (this.contractInstance) {
+                    this.contractInstance
+                        .getValidatorByAddress(this.wallet)
+                        .then((result) => {
+                            this.dispatchEvent({ type: SubjectType.isvalidator, data: result });
+                        }).catch((error) => {
+                            if(error.errorArgs[0] == 'Identity: validator not exists!'){
+                                this.dispatchEvent({ type: SubjectType.isvalidator, data: false });
+                            }
+                        });
+
+
                 }
             }
         });
