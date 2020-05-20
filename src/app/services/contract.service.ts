@@ -8,7 +8,6 @@ import { SubjectService } from './subject.service';
 import { SubjectType } from '../models/subject-type.enum';
 import { ValidationCostStrategy } from '../models/validation-cost-strategy.enum';
 import { ValidationStatus } from '../models/validation-status.enum';
-import { runInThisContext } from 'vm';
 
 @Injectable()
 export class ContractService extends SubjectService {
