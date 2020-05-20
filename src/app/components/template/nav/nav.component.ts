@@ -23,7 +23,7 @@ export class NavComponent {
     private contractService: ContractService
   ) { }
 
-  async ngOnInit(): Promise <void> {
+  async ngOnInit(): Promise<void> {
     this.portisService.onEvent.pipe(filter(item => item.type === SubjectType.logged)).subscribe((result) => {
       this.logged = result.data;
     });
@@ -32,7 +32,9 @@ export class NavComponent {
       this.wallet = result.data;
     });
 
-    // this.isValidator = await this.contractService.isValidator(this.wallet);
+    this.contractService.onEvent.pipe(filter(item => item.type === SubjectType.isvalidator)).subscribe((result) => {
+      this.isValidator = result.data;
+    });
   }
 
   login() {
@@ -40,6 +42,7 @@ export class NavComponent {
   }
 
   logout() {
+    console.log('logout');
     this.portisService.logout();
   }
 }
