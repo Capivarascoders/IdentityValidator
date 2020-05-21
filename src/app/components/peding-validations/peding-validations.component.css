@@ -19,3 +19,21 @@
     flex-direction: column;
     justify-content: space-around;
 }
+
+.buttons {
+    margin-top: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.button-green {
+    background-color: #4CAF50;
+    color: #FFF;
+}
+
+.button-yellow {
+    background-color: #FFEB3B;
+    color: #000;
+}

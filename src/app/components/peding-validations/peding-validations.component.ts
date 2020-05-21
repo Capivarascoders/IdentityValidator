@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { PortisService } from 'src/app/services/portis.service';
+import { filter } from 'rxjs/operators';
+import { ValidationStatus } from './../../models/validation-status.enum';
+import { ContractService } from 'src/app/services/contract.service';
 
 @Component({
   selector: 'app-peding-validations',
@@ -13,9 +17,10 @@ export class PedingValidationsComponent implements OnInit {
   panelOpenState = false;
 
 
-  constructor() { }
+  constructor(private contractService: ContractService) { }
 
   ngOnInit(): void {
+
   }
 
 }

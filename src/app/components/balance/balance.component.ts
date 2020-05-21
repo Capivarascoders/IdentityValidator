@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { PortisService } from 'src/app/services/portis.service';
 import { filter } from 'rxjs/operators';
 import { SubjectType } from 'src/app/models/subject-type.enum';
 import { ContractService } from 'src/app/services/contract.service';

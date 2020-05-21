@@ -1,6 +1,5 @@
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { SubjectType } from 'src/app/models/subject-type.enum';
 import { ContractService } from 'src/app/services/contract.service';
 
 @Component({
