@@ -6,6 +6,7 @@ import { RequestLootComponent } from '../app/pages/request-loot/request-loot.com
 import { ProfileComponent } from '../app/components/profile/profile.component';
 import { AllValidationsComponent } from './pages/all-validations/all-validations.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -13,7 +14,9 @@ const routes: Routes = [
   { path: 'request-loot', component: RequestLootComponent},
   { path: 'profile', component: ProfileComponent},
   { path: 'all-validation', component: AllValidationsComponent},
-  { path: 'signup', component: SignupComponent}
+  { path: 'signup', component: SignupComponent},
+  { path: '404', component: NotFoundComponent},
+  { path: '**', redirectTo: '404' }
 ];
 
 @NgModule({

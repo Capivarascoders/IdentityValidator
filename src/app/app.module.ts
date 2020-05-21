@@ -37,6 +37,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatTableModule } from '@angular/material/table';
 import { MatSelectModule } from '@angular/material/select';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     ProfileComponent,
     BalanceComponent,
     SignupComponent,
-    AllValidationsComponent
+    AllValidationsComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

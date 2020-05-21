@@ -53,6 +53,7 @@ export class ContractService extends SubjectService {
                         .getValidatorByAddress(this.wallet)
                         .then((result) => {
                             this.dispatchEvent({ type: SubjectType.isvalidator, data: result });
+                            console.log(result)
                         }).catch((error) => {
                             if(error.errorArgs[0] == 'Identity: validator not exists!'){
                                 this.dispatchEvent({ type: SubjectType.isvalidator, data: false });
@@ -76,10 +77,13 @@ export class ContractService extends SubjectService {
     }
 
     public async addValidator(strategy: ValidationCostStrategy, price: number) {
+        const overrides = { gasLimit: 8000000 }
         await this.contractInstance.addValidator(
             strategy,
-            price
+            price,
+            overrides
         );
+        this.dispatchEvent({ type: SubjectType.isvalidator, data: true });
     }
 
     public async getValidatorByAddress(address: string) {

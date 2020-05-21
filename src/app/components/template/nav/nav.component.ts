@@ -33,6 +33,7 @@ export class NavComponent {
     });
 
     this.contractService.onEvent.pipe(filter(item => item.type === SubjectType.isvalidator)).subscribe((result) => {
+      console.log(result)
       this.isValidator = result.data;
     });
   }
