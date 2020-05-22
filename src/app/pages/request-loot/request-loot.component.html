@@ -1,40 +1,72 @@
 <main class="main">
     <mat-card class="card-general">
-        <mat-horizontal-stepper linear #stepper>
+        <mat-horizontal-stepper class="stepper" linear #stepper>
             <mat-step [stepControl]="firstFormGroup">
                 <form [formGroup]="firstFormGroup">
-                    <ng-template matStepLabel>Fill out your name</ng-template>
-                    <mat-card matRipple [matRippleColor]="color" class="card-form">
+                    <ng-template matStepLabel>Choose the origin</ng-template>
+                    <mat-card class="mat-elevation-z6 card-form">
+                        <h3>Put your address</h3>
                         <mat-form-field>
-                            <mat-label>Name</mat-label>
-                            <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+                            <mat-label>Address</mat-label>
+                            <input matInput placeholder="0x09c15427Fed859ed46AFFB996bCd62f3b9180137" formControlName="firstCtrl" required>
                         </mat-form-field>
                     </mat-card>
 
-                    <div>
-                        <button mat-button matStepperNext>Next</button>
+                    <div class="button">
+                        <button mat-button matStepperNext color="primary">Next</button>
                     </div>
                 </form>
             </mat-step>
             <mat-step [stepControl]="secondFormGroup" [optional]="isOptional">
                 <form [formGroup]="secondFormGroup">
-                    <ng-template matStepLabel>Fill out your address</ng-template>
-                    <mat-form-field>
-                        <mat-label>Address</mat-label>
-                        <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY" required>
-                    </mat-form-field>
-                    <div>
-                        <button mat-button matStepperPrevious>Back</button>
-                        <button mat-button matStepperNext>Next</button>
+                    <ng-template matStepLabel>Destiny account</ng-template>
+                        <mat-card class="mat-elevation-z6 card-form">
+                            <h3>Put destiny wallet</h3>
+                            <mat-form-field>
+                                <mat-label>Address</mat-label>
+                                <input matInput placeholder="0x09c15427Fed859ed46AFFB996bCd62f3b9180137" formControlName="secondCtrl" required>
+                            </mat-form-field>
+                        </mat-card>
+                    <div class="button">
+                        <button mat-button matStepperPrevious color="primary">Back</button>
+                        <button mat-button matStepperNext color="primary">Next</button>
                     </div>
                 </form>
             </mat-step>
             <mat-step>
-                <ng-template matStepLabel>Done</ng-template>
-                <p>You are now done.</p>
-                <div>
-                    <button mat-button matStepperPrevious>Back</button>
-                    <button mat-button (click)="stepper.reset()">Reset</button>
+                <ng-template matStepLabel>Request loot information</ng-template>
+                <form [formGroup]="thirdFormGroup">
+                        <mat-card class="mat-elevation-z6 card-form">
+                            <h3>Put destiny wallet</h3>
+                            <mat-form-field>
+                                <mat-label>Value</mat-label>
+                                <input matInput placeholder="ETH" formControlName="thirdFormGroup" required>
+                            </mat-form-field>
+                            <mat-form-field>
+                                <mat-label>Description</mat-label>
+                                <input matInput placeholder="Put your description" formControlName="thirdFormGroup" required>
+                            </mat-form-field>
+                        </mat-card>
+                </form>            
+
+                <h4>Set a date or choose send now</h4>
+
+                <section class="date">
+                    <mat-form-field class="datapicker-spacing">
+                        <mat-label>Choose a date</mat-label>
+                        <input matInput [matDatepicker]="picker">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                    
+                    <mat-radio-group arial-label="Now">
+                        <mat-radio-button value="1">Now</mat-radio-button>
+                    </mat-radio-group>   
+                </section>
+                
+                 <div class="button">
+                    <button mat-button matStepperPrevious color="primary">Back</button>
+                    <button mat-button (click)="stepper.reset()" color="primary">Reset</button>
                 </div>
             </mat-step>
         </mat-horizontal-stepper>

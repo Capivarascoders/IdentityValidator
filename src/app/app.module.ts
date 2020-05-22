@@ -18,6 +18,7 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { PortisService } from './services/portis.service';
 import { ContractService } from './services/contract.service';
 import { AllValidationsComponent } from './pages/all-validations/all-validations.component'; 
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -36,8 +37,10 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatTableModule } from '@angular/material/table';
 import { MatSelectModule } from '@angular/material/select';
-import {MatPaginatorModule} from '@angular/material/paginator';
-import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatNativeDateModule } from '@angular/material/core'
 
 @NgModule({
   declarations: [
@@ -52,7 +55,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     BalanceComponent,
     SignupComponent,
     AllValidationsComponent,
-    NotFoundComponent
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -76,7 +79,10 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     FlexLayoutModule,
     MatTableModule,
     MatSelectModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatRadioModule,
+    MatDatepickerModule,
+    MatNativeDateModule 
   ],
   providers: [
     PortisService,

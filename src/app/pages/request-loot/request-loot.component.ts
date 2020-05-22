@@ -9,6 +9,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 export class RequestLootComponent implements OnInit{
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
+  thirdFormGroup: FormGroup;
   isOptional = false;
   color = '#F5F5F5';
 
@@ -21,5 +22,8 @@ export class RequestLootComponent implements OnInit{
     this.secondFormGroup = this._formBuilder.group({
       secondCtrl: ''
     });
+    this.thirdFormGroup = this._formBuilder.group({
+      thirdFormGroup: ''
+    })
   }
 }

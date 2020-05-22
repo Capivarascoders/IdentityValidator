@@ -23,14 +23,14 @@
     </section>
 </main>
 
-<section *ngIf="!isValidator" class="home-notValidator">
+<section fxLayout.md="column"  *ngIf="!isValidator" class="home-notValidator">
     <div class="text-home">
-        <p class="title-color">Welcome to IdentityMoney Validator</p>
+        <p  class="title-color">Welcome to IdentityMoney Validator</p>
         <p class="paragraph">You need to add yourself as a validator before you can see your validation dashboard, so go
             to <strong>"Add validator"</strong> to proceed.</p>
     </div>
 
-    <figure>
+    <figure >
         <img src="../../../assets/img/ethereum.svg">
     </figure>
 </section>

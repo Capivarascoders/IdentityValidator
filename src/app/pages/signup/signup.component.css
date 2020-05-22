@@ -15,7 +15,7 @@
 
 .card {
     width: 30vw;
-    height: 60vh;
+    height: 65vh;
     margin-top: 15%;
 }
 
@@ -35,7 +35,9 @@ p {
 }
 
 .form-strategy {
+    height: 45%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
 }

@@ -6,8 +6,8 @@
 }
 
 .card-general {
-    height: 80vh;
-    width: 80vw;
+    height: 60vh;
+    width: 50vw;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -17,7 +17,6 @@
 .card-form {
     width: 20%;
     height: 20vh;
-    cursor: pointer;
 }
 
 .stepper-principal {
@@ -26,4 +25,24 @@
 
 .font-title {
     color: #42A5F5;
+}
+
+.button {
+    margin-top: 2%;
+}
+
+.stepper {
+    height: 100vh;
+}
+
+.date {
+    width: 15vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+h4 {
+    margin-top: 2%;
+    font-weight: 500;
 }
