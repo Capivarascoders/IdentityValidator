@@ -13,27 +13,19 @@ import { SubjectType } from 'src/app/models/subject-type.enum';
 })
 export class AllValidationsComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource;
+  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   wallet;
 
-  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
-  constructor(private contractService: ContractService, private portisService: PortisService) {
-    this.portisService.onEvent.pipe(filter(item => item.type === SubjectType.wallet)).subscribe((result) => {
-      this.wallet = result.data;
-    });
+  constructor() {
+
    }
+   
+   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
-  async ngOnInit(): Promise <void> {
+   ngOnInit() {
     this.dataSource.paginator = this.paginator;
-
-    const validator = await this.contractService.getValidatorByAddress(this.wallet);
-    const dateToBeValidate = await this.contractService.getIdsDataToBeValidatedIdByValidatorId(validator.validatorId);
-
   }
-
-
-
 }
 
 export interface PeriodicElement {
@@ -44,24 +36,15 @@ export interface PeriodicElement {
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Aprovado', weight: 19.05, symbol: '0x09c15427Fed859ed46AFFB996bCd62f3b9180137'},
-  {position: 2, name: 'Aprovado', weight: 19.05, symbol: '0x09c15427Fed859ed46AFFB996bCd62f3b9180137'},
-  {position: 3, name: 'Aprovado', weight: 19.05, symbol: '0x09c15427Fed859ed46AFFB996bCd62f3b9180137'},
-  {position: 4, name: 'Aprovado', weight: 19.05, symbol: '0x09c15427Fed859ed46AFFB996bCd62f3b9180137'},
-  {position: 5, name: 'Aprovado', weight: 19.05, symbol: '0x09c15427Fed859ed46AFFB996bCd62f3b9180137'},
-  {position: 6, name: 'Aprovado', weight: 19.05, symbol: '0x09c15427Fed859ed46AFFB996bCd62f3b9180137'},
-  {position: 7, name: 'Aprovado', weight: 19.05, symbol: '0x09c15427Fed859ed46AFFB996bCd62f3b9180137'},
-  {position: 8, name: 'Aprovado', weight: 19.05, symbol: '0x09c15427Fed859ed46AFFB996bCd62f3b9180137'},
-  {position: 9, name: 'Aprovado', weight: 19.05, symbol: '0x09c15427Fed859ed46AFFB996bCd62f3b9180137'},
-  {position: 10, name: 'Aprovado', weight: 19.05, symbol: '0x09c15427Fed859ed46AFFB996bCd62f3b9180137'},
-  {position: 11, name: 'Aprovado', weight: 19.05, symbol: '0x09c15427Fed859ed46AFFB996bCd62f3b9180137'},
-  {position: 12, name: 'Aprovado', weight: 19.05, symbol: '0x09c15427Fed859ed46AFFB996bCd62f3b9180137'},
-  {position: 13, name: 'Aprovado', weight: 19.05, symbol: '0x09c15427Fed859ed46AFFB996bCd62f3b9180137'},
-  {position: 14, name: 'Aprovado', weight: 19.05, symbol: '0x09c15427Fed859ed46AFFB996bCd62f3b9180137'},
-  {position: 15, name: 'Aprovado', weight: 19.05, symbol: '0x09c15427Fed859ed46AFFB996bCd62f3b9180137'},
-  {position: 16, name: 'Aprovado', weight: 19.05, symbol: '0x09c15427Fed859ed46AFFB996bCd62f3b9180137'},
-  {position: 17, name: 'Aprovado', weight: 19.05, symbol: '0x09c15427Fed859ed46AFFB996bCd62f3b9180137'},
-  {position: 18, name: 'Aprovado', weight: 19.05, symbol: '0x09c15427Fed859ed46AFFB996bCd62f3b9180137'},
-  {position: 19, name: 'Aprovado', weight: 19.05, symbol: '0x09c15427Fed859ed46AFFB996bCd62f3b9180137'},
-  {position: 20, name: 'Aprovado', weight: 19.05, symbol: '0x09c15427Fed859ed46AFFB996bCd62f3b9180137'},
+  {position: 1, name: 'Validated', weight: 10.05, symbol: '0x09c15427Fed859ed46AFFB996bCd62f3b9180137'},
+  {position: 2, name: 'Not validate', weight: 15.05, symbol: '0x09c15427Fed859ed46AFFB996bCd62f3b9180137'},
+  {position: 3, name: 'Validated', weight: 17.05, symbol: '0x09c15427Fed859ed46AFFB996bCd62f3b9180137'},
+  {position: 4, name: 'Validated', weight: 18.05, symbol: '0x09c15427Fed859ed46AFFB996bCd62f3b9180137'},
+  {position: 5, name: 'Validated', weight: 19.05, symbol: '0x09c15427Fed859ed46AFFB996bCd62f3b9180137'},
+  {position: 6, name: 'Validated', weight: 19.05, symbol: '0x09c15427Fed859ed46AFFB996bCd62f3b9180137'},
+  {position: 7, name: 'Validated', weight: 20.05, symbol: '0x09c15427Fed859ed46AFFB996bCd62f3b9180137'},
+  {position: 8, name: 'Validated', weight: 15.9994, symbol: '0x09c15427Fed859ed46AFFB996bCd62f3b9180137'},
+  {position: 9, name: 'Not validate', weight: 18.9984, symbol: '0x09c15427Fed859ed46AFFB996bCd62f3b9180137'},
+  {position: 10, name: 'Not validate', weight: 20.1797, symbol: '0x09c15427Fed859ed46AFFB996bCd62f3b9180137'},
+  {position: 11, name: 'Not validate', weight: 22.9897, symbol: '0x09c15427Fed859ed46AFFB996bCd62f3b9180137'},
 ];
