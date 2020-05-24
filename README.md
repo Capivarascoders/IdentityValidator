@@ -7,7 +7,7 @@
   The basis of this module are smart contracts, created to save and manage the user's data and relationship between users, validators and consumers.
 </p>
 
-<img src="docs/imgReadme/screens.svg">
+<img src="docs/imgReadme/screen.svg">
 
 ### User Story
 
